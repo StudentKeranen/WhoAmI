@@ -32,6 +32,10 @@ namespace Entitylayer
         }
         private static int _userCount;
 
+        public User()
+        {
+
+        }
         public User(string firstname, string lastName, string password, int usertype)
         {
             _userCount++;

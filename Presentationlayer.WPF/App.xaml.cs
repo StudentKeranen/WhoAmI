@@ -22,6 +22,9 @@ namespace Presentationlayer.WPF
             {
                 WindowService.RegisterWindow<LoggaInViewModel, InloggningWindow>();
             };
+
+            Datalayer.AppDbContext dbContext = new Datalayer.AppDbContext();
+            dbContext.seed();
         }
-}
+    }
 }

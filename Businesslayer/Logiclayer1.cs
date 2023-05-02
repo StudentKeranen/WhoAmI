@@ -2,7 +2,7 @@ using System;
 
 namespace Businesslayer
 {
-    public class Class1
+    public class Logiclayer1
     {
     }
 }

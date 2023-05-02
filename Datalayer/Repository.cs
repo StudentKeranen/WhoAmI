@@ -44,7 +44,7 @@ namespace Datalayer
         /// <returns></returns>
         public T FirstOrDefault(Func<T, bool> predicate)
         {
-            return dbSet.FirstOrDefault(predicate);
+            return dbSet.FirstOrDefault(predicate)!;
         }
         public IEnumerable<T> Find(Func<T, bool> predicate, params Expression<Func<T, object>>[] includes)
         {
@@ -58,7 +58,7 @@ namespace Datalayer
             var query = dbSet.AsQueryable();
             foreach (var include in includes)
                 query = query.Include(include);
-            return query.FirstOrDefault(predicate);
+            return query.FirstOrDefault(predicate)!;
         }
     }
 }

@@ -30,13 +30,16 @@ namespace Entitylayer
                 _userTypeValue = value;
             }
         }
+        private static int _userCount;
 
         public User(string firstname, string lastName, string password, int usertype)
         {
-            this.Firstname =firstname;
-            this.Surname = lastName;
-            this.Password = password;
-            this.Usertype = usertype;
+            _userCount++;
+            UserId = "U" + _userCount.ToString("######");
+            Firstname = firstname;
+            Surname = lastName;
+            Password = password;
+            Usertype = usertype;
         }
     }
 }

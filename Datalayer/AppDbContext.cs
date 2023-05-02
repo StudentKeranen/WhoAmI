@@ -20,5 +20,10 @@ namespace Datalayer
                 base.OnConfiguring(optionBuilder);
             }
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasKey(u => u.UserId);
+        }
     }
 }

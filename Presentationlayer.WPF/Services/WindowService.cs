@@ -17,7 +17,7 @@ namespace Presentationlayer.WPF.Services
 
         private Window CreateWindow<TViewModel>(TViewModel model)
         {
-            if (mappings.TryGetValue(typeof(TViewModel), out Type view))
+            if (mappings.TryGetValue(typeof(TViewModel), out Type? view))
             {
                 if (Activator.CreateInstance(view) is Window window)
                 {
@@ -26,7 +26,7 @@ namespace Presentationlayer.WPF.Services
                     return window;
                 }
             }
-            return null;
+            return null!;
         }
 
         public void Show<TViewModel>(TViewModel model)

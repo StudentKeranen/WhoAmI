@@ -9,7 +9,7 @@ namespace Datalayer
 {
     public class UnitOfWork
     {
-        public Repository<User> UserRepository { get; private set; }
-        public Repository<Company> CompanyRepository { get; private set; }
+        public Repository<User> UserRepository { get; private set; } = null!;
+        public Repository<Company> CompanyRepository { get; private set; } = null!;
     }
 }

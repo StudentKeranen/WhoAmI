@@ -1,11 +1,14 @@
 using System;
 using System.Net;
 using Entitylayer;
+using Datalayer;
 
 namespace Businesslayer
 {
     public sealed class SessionController
     {
+        public UnitOfWork unitOfWork = new UnitOfWork();
+
         private static SessionController? _instance;
 
         private SessionController(User user) 
@@ -29,8 +32,7 @@ namespace Businesslayer
             }
             return _instance;
         }
-        public UnitOfWork unitOfWork = new UnitOfWork(); //Logiken/kontext lägger vi i UoW-klassen
-        private User? LoggedIn { get; set; }
+        public User? LoggedIn { get; private set; }
 
         public void LogIn(string firstname, string password)
         {

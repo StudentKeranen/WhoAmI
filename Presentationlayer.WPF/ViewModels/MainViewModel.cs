@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Threading;
+using Businesslayer;
 
 namespace Presentationlayer.WPF.ViewModels
 {
@@ -31,9 +32,9 @@ namespace Presentationlayer.WPF.ViewModels
         {
             LoggaInViewModel loggaIn = new LoggaInViewModel();
             windowService.ShowDialog(loggaIn);
-            if (SessionController.Inloggad != null)
+            if (SessionController.LoggedIn != null)
             {
-                Inloggad = $"{SessionController.Inloggad.Förnamn}";
+                Inloggad = $"{SessionController.LoggedIn.UserId}";
                 MainVisibility = Visibility.Visible;
             }
             else ExitCommand.Execute(true);

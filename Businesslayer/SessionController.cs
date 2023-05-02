@@ -46,7 +46,7 @@ namespace Businesslayer
             }
         }
 
-        public void Terminate()
+        public static void Terminate()
         {
             _instance = null;
             LoggedIn = null;

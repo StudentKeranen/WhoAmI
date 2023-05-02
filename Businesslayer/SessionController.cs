@@ -10,7 +10,7 @@ namespace Businesslayer
         public UnitOfWork unitOfWork = new UnitOfWork();
 
         private static SessionController? _instance;
-
+        public static User? LoggedIn { get; private set; }
         private SessionController(User user) 
         {
             LoggedIn = user;
@@ -32,7 +32,9 @@ namespace Businesslayer
             }
             return _instance;
         }
-        public User? LoggedIn { get; private set; }
+        public UnitOfWork unitOfWork = new UnitOfWork(); //Logiken/kontext lägger vi i UoW-klassen
+        private User? LoggedIn { get; set; }
+
 
         public void LogIn(string firstname, string password)
         {

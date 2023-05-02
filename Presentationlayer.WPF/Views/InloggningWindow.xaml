@@ -5,16 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentationlayer.WPF.Views"
         mc:Ignorable="d"
-        Title="InloggningWindow" Height="450" Width="800">
-    <Grid Margin="150,10,150,10" Background="#FFF4F0F0" >
-        <Label Content="Username" HorizontalAlignment="Left" Margin="185,115,0,0" VerticalAlignment="Top" Width="110" Height="44" FontSize="18" FontFamily="Sans Serif Collection"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="86" Height="50" FontSize="18" RenderTransformOrigin="0.5,0.5" FontFamily="Sans Serif Collection"/>
-        <Image Height="100" Width="100" Margin="200,9,200,305" Source="/image/user.png"/>
-        <Image Margin="260,106,180,234" Source="/image/userprofile.png" RenderTransformOrigin="0.096,0.611" Height="NaN" Width="NaN"/>
-        <Image Margin="222,207,141,187" Source="/image/password123.png" Height="NaN" RenderTransformOrigin="0.763,0.351" Width="NaN"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="150,242,0,0" VerticalAlignment="Top" Width="190" Background="White"/>
-        <TextBox HorizontalAlignment="Left" Margin="150,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="190" Height="20" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Sign In" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Height="25" Width="130" Click="Button_Click"/>
+        Title="InloggningWindow" Height="450" Width="500">
+    <Grid Background="#FFF4F0F0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" Grid.Row="0" Margin="45,25,45,0" Height="100" Width="100" Source="/image/user.png"/>
+        <WrapPanel Grid.Column="1" Grid.Row="1" Margin="0,0,0,62" Grid.RowSpan="2">
+            <Label Content="Username" Width="110" Height="44" FontSize="18" FontFamily="Sans Serif Collection"/>
+            <Image Source="/image/userprofile.png" RenderTransformOrigin="0.096,0.611" Height="74" Width="74" />
+        </WrapPanel>
+        <WrapPanel Grid.Column="1" Grid.Row="3">
+            <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="50" FontSize="18" RenderTransformOrigin="0.5,0.5" FontFamily="Sans Serif Collection"/>
+            <Image Source="/image/password123.png" Height="19" RenderTransformOrigin="0.763,0.351" Width="19" Margin="50,0,0,0"/>
+        </WrapPanel>
+
+        <PasswordBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Background="White" Margin="0,61,0,0" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="190" Height="20" TextChanged="TextBox_TextChanged"/>
+        <Button Grid.Column="1" Grid.Row="4" Content="Sign In" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="130" Click="Button_Click" Margin="0,62,0,0" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

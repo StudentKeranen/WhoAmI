@@ -2,8 +2,8 @@ using System;
 
 namespace Businesslayer
 {
-    public class Logiclayer1
+    public class SessionController
     {
-
+     
     }
 }

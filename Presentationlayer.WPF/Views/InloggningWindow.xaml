@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:Presentationlayer.WPF.Views"
         mc:Ignorable="d"
         Title="InloggningWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="150,10,150,10" Background="#FFF4F0F0" >
+        <Label Content="Username" HorizontalAlignment="Left" Margin="185,115,0,0" VerticalAlignment="Top" Width="110" Height="44" FontSize="18" FontFamily="Sans Serif Collection"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="86" Height="50" FontSize="18" RenderTransformOrigin="0.5,0.5" FontFamily="Sans Serif Collection"/>
+        <Image Height="100" Width="100" Margin="200,9,200,305" Source="/image/user.png"/>
+        <Image Margin="260,106,180,234" Source="/image/userprofile.png" RenderTransformOrigin="0.096,0.611" Height="NaN" Width="NaN"/>
+        <Image Margin="222,207,141,187" Source="/image/password123.png" Height="NaN" RenderTransformOrigin="0.763,0.351" Width="NaN"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="150,242,0,0" VerticalAlignment="Top" Width="190" Background="White"/>
+        <TextBox HorizontalAlignment="Left" Margin="150,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="190" Height="20" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Sign In" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Height="25" Width="130" Click="Button_Click"/>
+
     </Grid>
 </Window>

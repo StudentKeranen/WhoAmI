@@ -17,11 +17,16 @@ namespace Presentationlayer.WPF.Views
     /// <summary>
     /// Interaction logic for InloggningWindow.xaml
     /// </summary>
-    public partial class InloggningWindow : Window
+    public partial class InloggningWindow : Window, ICloseable
     {
         public InloggningWindow()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

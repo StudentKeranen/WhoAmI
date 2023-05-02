@@ -46,5 +46,10 @@ namespace Businesslayer
             }
         }
 
+        public static void Terminate()
+        {
+            _instance = null;
+            LoggedIn = null;
+        }
     }
 }

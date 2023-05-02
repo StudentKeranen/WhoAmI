@@ -25,5 +25,14 @@ namespace Datalayer
         {
             modelBuilder.Entity<User>().HasKey(u => u.UserId);
         }
+        public void seed()
+        {
+            Users.Add(new User("Jonathan", "Öberg", "sOlstrale", 1));
+            Users.Add(new User("Robert", "Keränen", "SaSforLajf", 1));
+            Users.Add(new User("Danny", "Mansour", "KingsbackHood", 1));
+            Users.Add(new User("Daniel", "Yar", "HogreStudier", 2));
+
+            SaveChanges();
+        }
     }
 }

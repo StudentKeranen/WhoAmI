@@ -33,9 +33,9 @@ namespace Businesslayer
             return _instance;
         }
         
-        public void LogIn(string firstname, string password)
+        public void LogIn(string ID, string password)
         {
-            User credentials = unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == Firstname);
+            User credentials = unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == ID);
             if (credentials != null && credentials.Password.Equals(password))
             {
                 LoggedIn = credentials;

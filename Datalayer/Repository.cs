@@ -1,17 +1,18 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace DataLayer
+namespace Datalayer
 {
     public class Repository<T>
         where T : class
     {
-        internal SessionContext context;
-        internal DbSet<T> dbSet;
+        protected AppDbContext context;
+        protected DbSet<T> dbSet;
 
-        public Repository(SessionContext context)
+        public Repository(AppDbContext context)
         {
             this.context = context;
             dbSet = context.Set<T>();

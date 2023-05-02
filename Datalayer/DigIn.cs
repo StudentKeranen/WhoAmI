@@ -2,7 +2,7 @@ using System;
 
 namespace Datalayer
 {
-    public class Class1
+    public class DigIn
     {
     }
 }

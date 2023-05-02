@@ -32,10 +32,7 @@ namespace Businesslayer
             }
             return _instance;
         }
-        public UnitOfWork unitOfWork = new UnitOfWork(); //Logiken/kontext lägger vi i UoW-klassen
-        private User? LoggedIn { get; set; }
-
-
+        
         public void LogIn(string firstname, string password)
         {
             User credentials = unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == Firstname);

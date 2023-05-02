@@ -1,4 +1,6 @@
 ﻿using Presentationlayer.WPF.Services;
+using Presentationlayer.WPF.ViewModels;
+using Presentationlayer.WPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,7 +20,7 @@ namespace Presentationlayer.WPF
         {
             Startup += (s, e) =>
             {
-                //WindowService.RegisterWindow<LoggaInViewModel, InloggningWindow>();
+                WindowService.RegisterWindow<LoggaInViewModel, InloggningWindow>();
             };
         }
 }

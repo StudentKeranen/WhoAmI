@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Presentationlayer.WPF.ViewModels"
         mc:Ignorable="d"
-        Title="Grupp9:s Bibliotek" Height="450" Width="800">
+        Title="Grupp9:s Bibliotek" Height="450" Width="800" Visibility="{Binding MainVisibility}">
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>

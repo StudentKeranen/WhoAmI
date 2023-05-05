@@ -27,6 +27,9 @@ namespace Datalayer
         }
         public void seed()
         {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
+
             Users.Add(new User("Jonathan", "Öberg", "sOlstrale", 1));
             Users.Add(new User("Robert", "Keränen", "SaSforLajf", 1));
             Users.Add(new User("Danny", "Mansour", "KingsbackHood", 1));

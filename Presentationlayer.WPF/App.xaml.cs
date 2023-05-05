@@ -18,7 +18,7 @@ namespace Presentationlayer.WPF
     {
         public App()
         {
-            Startup += (s, e) =>
+            Startup += (s, e) => //ta bort denna sen
             {
                 WindowService.RegisterWindow<LoggaInViewModel, InloggningWindow>();
             };

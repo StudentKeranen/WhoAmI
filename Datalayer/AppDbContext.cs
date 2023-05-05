@@ -16,7 +16,7 @@ namespace Datalayer
         {
             if (!optionBuilder.IsConfigured)
             {
-                optionBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=WhoAmI;");
+                optionBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=WhoAmI;Trusted_Connection=True;");
                 base.OnConfiguring(optionBuilder);
             }
         }

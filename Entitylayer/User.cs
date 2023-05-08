@@ -12,8 +12,6 @@ namespace Entitylayer
     public class User
     {
         public string UserId { get; set; }
-        public string Firstname { get; set; }
-        public string Surname { get; set; }
         public string Password { get; set; }
         private int _userTypeValue;
         public int Usertype 
@@ -36,12 +34,10 @@ namespace Entitylayer
         {
 
         }
-        public User(string firstname, string lastName, string password, int usertype)
+        public User(string password, int usertype)
         {
             _userCount++;
             UserId = "U" + _userCount.ToString("######");
-            Firstname = firstname;
-            Surname = lastName;
             Password = password;
             Usertype = usertype;
         }

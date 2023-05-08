@@ -12,12 +12,17 @@ namespace Datalayer
         protected AppDbContext appDbContext { get; }
         public Repository<User> UserRepository { get; private set; } = null!;
         public Repository<Company> CompanyRepository { get; private set; } = null!;
+        public Repository<DataCategory> DataCategoryRepository { get; private set; } = null!;
+        public Repository<PersonalData> PersonalDataRepository { get; private set; } = null!;
+
         public UnitOfWork()
         {
             appDbContext = new AppDbContext();
 
             UserRepository = new Repository<User>(appDbContext);
             CompanyRepository = new Repository<Company>(appDbContext);
+            DataCategoryRepository = new Repository<DataCategory>(appDbContext);
+            PersonalDataRepository = new Repository<PersonalData>(appDbContext);
         }
 
         public void Save()

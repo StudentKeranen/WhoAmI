@@ -12,6 +12,8 @@ namespace Datalayer
     {
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Company> Companies { get; set; } = null!;
+        public DbSet<DataCategory> DataCategories { get; set; } = null!;
+        public DbSet<PersonalData> PersonalDataSet { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
             if (!optionBuilder.IsConfigured)
@@ -30,10 +32,23 @@ namespace Datalayer
             Database.EnsureDeleted();
             Database.EnsureCreated();
 
-            Users.Add(new User("Jonathan", "Öberg", "sOlstrale", 1));
-            Users.Add(new User("Robert", "Keränen", "SaSforLajf", 1));
-            Users.Add(new User("Danny", "Mansour", "KingsbackHood", 1));
-            Users.Add(new User("Daniel", "Yar", "HogreStudier", 2));
+            DataCategory category = new DataCategory() { CategoryName = "Personal Information", CategoryDescription = "Data that are closely connected to the individual person"};
+            DataCategories.Add(category);
+            
+            User user = new User("sOlstrale", 2);
+            Users.Add(user);
+            PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "First name", DataValue = "Jonathan", User = user });
+            PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Last name", DataValue = "Öberg", User = user }); 
+            
+            user = new User("SaSforLajf", 1);
+            Users.Add(user);
+            PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "First name", DataValue = "Robert", User = user });
+            PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Last name", DataValue = "Keränen", User = user });
+            
+            user = new User("KingsbackHood", 1);
+            Users.Add(user);
+            PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "First name", DataValue = "Danny", User = user });
+            PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Last name", DataValue = "Mansour", User = user });
 
             SaveChanges();
         }

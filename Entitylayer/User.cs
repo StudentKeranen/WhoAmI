@@ -37,7 +37,7 @@ namespace Entitylayer
         public User(string password, int usertype)
         {
             _userCount++;
-            UserId = "U" + _userCount.ToString("######");
+            UserId = "U" + _userCount.ToString("000000");
             Password = password;
             Usertype = usertype;
         }

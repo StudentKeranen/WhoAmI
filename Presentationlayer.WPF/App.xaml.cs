@@ -20,7 +20,7 @@ namespace Presentationlayer.WPF
         {
             Startup += (s, e) => //ta bort denna sen
             {
-                WindowService.RegisterWindow<LoggaInViewModel, InloggningWindow>();
+                WindowService.RegisterWindow<LoginViewModel, LoginWindow>();
             };
 
             Datalayer.AppDbContext dbContext = new Datalayer.AppDbContext();

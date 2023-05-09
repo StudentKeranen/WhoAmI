@@ -30,7 +30,7 @@ namespace Presentationlayer.WPF.ViewModels
 
         public void Loggain()
         {
-            LoggaInViewModel loggaIn = new LoggaInViewModel();
+            LoginViewModel loggaIn = new LoginViewModel();
             windowService.ShowDialog(loggaIn);
             if (SessionController.LoggedIn != null)
             {

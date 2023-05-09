@@ -6,9 +6,7 @@ using Datalayer;
 namespace Businesslayer
 {
     public sealed class SessionController
-    {
-        public UnitOfWork unitOfWork = new UnitOfWork();
-
+    { 
         private static SessionController? _instance;
         public static User? LoggedIn { get; private set; }
         private SessionController(User user) 
@@ -26,24 +24,35 @@ namespace Businesslayer
         }
         public static SessionController Instance()
         {
-            if (null == _instance)
+            if (_instance == null)
             {
                 throw new ApplicationException("No user found!");
             }
             return _instance;
         }
-        
+        public static SessionController Instance(String ID, String password)
+        {
+            if (_instance == null)
+            {
+                UnitOfWork unitOfWork = new UnitOfWork();
+                User credentials = unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == ID);
+                if (credentials != null && credentials.Password.Equals(password))
+                {
+                    LoggedIn = credentials;
+                    _instance = new SessionController(credentials);
+                    return _instance;
+                }
+                else
+                {
+                    throw new ApplicationException("Login failed!");
+                }
+            }
+            return _instance;
+        }
+
         public void LogIn(string ID, string password)
         {
-            User credentials = unitOfWork.UserRepository.FirstOrDefault(u => u.UserId == ID);
-            if (credentials != null && credentials.Password.Equals(password))
-            {
-                LoggedIn = credentials;
-            }
-            else
-            {
-                LoggedIn = null;
-            }
+            
         }
 
         public static void Terminate()

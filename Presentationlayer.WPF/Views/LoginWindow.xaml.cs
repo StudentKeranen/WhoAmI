@@ -18,9 +18,9 @@ namespace Presentationlayer.WPF.Views
     /// <summary>
     /// Interaction logic for InloggningWindow.xaml
     /// </summary>
-    public partial class InloggningWindow : Window, ICloseable
+    public partial class LoginWindow : Window, ICloseable
     {
-        public InloggningWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }

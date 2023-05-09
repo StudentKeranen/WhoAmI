@@ -32,7 +32,6 @@ namespace Entitylayer
 
         public User()
         {
-
         }
         public User(string password, int usertype)
         {

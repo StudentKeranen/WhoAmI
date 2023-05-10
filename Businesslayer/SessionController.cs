@@ -44,15 +44,11 @@ namespace Businesslayer
                 }
                 else
                 {
-                    throw new ApplicationException("Login failed!");
+                    throw new ApplicationException("Login failed!\nEnter correct username and/or password!");
                 }
             }
-            return _instance;
-        }
-
-        public void LogIn(string ID, string password)
-        {
-            
+            else
+            { throw new ApplicationException("Login failed!\nA user is allready logged in to the system"); }
         }
 
         public static void Terminate()

@@ -30,13 +30,15 @@
             <Label Content="Username" Width="110" Height="44" FontSize="18" FontFamily="Sans Serif Collection"/>
             <Image Source="./image/userprofile.png" RenderTransformOrigin="0.096,0.611" Height="74" Width="74" />
         </WrapPanel>
+        <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Width="190" Height="20"/>
+
+
         <WrapPanel Grid.Column="1" Grid.Row="3">
             <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="50" FontSize="18" RenderTransformOrigin="0.5,0.5" FontFamily="Sans Serif Collection"/>
             <Image Source="./image/password123.png" Height="19" RenderTransformOrigin="0.763,0.351" Width="19" Margin="50,0,0,0"/>
         </WrapPanel>
+        <components:BindablePasswordBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="20" Width="190" Background="White" Margin="0,61,0,0" Grid.RowSpan="3" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
-        <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Width="190" Height="20"/>
-        <components:BindablePasswordBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Background="White" Margin="0,61,0,0" Grid.RowSpan="2" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         <Button Grid.Column="1" Grid.Row="4" Content="Sign In" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="130" Margin="0,62,0,0" Grid.RowSpan="2" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=View}"/>
 
     </Grid>

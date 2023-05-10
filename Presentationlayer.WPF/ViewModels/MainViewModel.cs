@@ -15,26 +15,26 @@ namespace Presentationlayer.WPF.ViewModels
     public class MainViewModel : ObservableObject
     {
         WindowService windowService = new WindowService();
-        private string inloggad = "#NA";
-        public string Inloggad
+        private string loggedInUser = "#NA";
+        public string LoggedInUser
         {   
-            get { return inloggad; }
-            set { inloggad = value; OnPropertyChanged(); }
+            get { return loggedInUser; }
+            set { loggedInUser = value; OnPropertyChanged(); }
         }
 
         public MainViewModel()
         {
             MainVisibility = Visibility.Hidden;
-            Loggain();
+            LogIn();
         }
 
-        public void Loggain()
+        public void LogIn()
         {
-            LoginViewModel loggaIn = new LoginViewModel();
-            windowService.ShowDialog(loggaIn);
+            LoginViewModel logIn = new LoginViewModel();
+            windowService.ShowDialog(logIn);
             if (SessionController.LoggedIn != null)
             {
-                Inloggad = $"{SessionController.LoggedIn.UserId}";
+                LoggedInUser = $"{SessionController.LoggedIn.UserId}";
                 MainVisibility = Visibility.Visible;
             }
             else ExitCommand.Execute(true);
@@ -47,13 +47,13 @@ namespace Presentationlayer.WPF.ViewModels
             set { mainVisibility = value; OnPropertyChanged(); } 
         }
 
-        private ICommand loggaut = null!;
-        public ICommand Loggaut =>
-            loggaut ??= loggaut = new RelayCommand(() =>
+        private ICommand logOut = null!;
+        public ICommand LogOut =>
+            logOut ??= logOut = new RelayCommand(() =>
             {
                 MainVisibility = Visibility.Hidden;
                 SessionController.Terminate();
-                Loggain();
+                LogIn();
             });
 
         private ICommand exitCommand = null!;

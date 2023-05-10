@@ -27,9 +27,9 @@ namespace Presentationlayer.WPF.ViewModels
             set { password = value; OnPropertyChanged(); }
         }
 
-        private ICommand loginCommand = null!;
-        public ICommand LoginCommand =>
-        loginCommand ??= loginCommand = new RelayCommand<ICloseable>((view) =>
+        private ICommand logInCommand = null!;
+        public ICommand LogInCommand =>
+        logInCommand ??= logInCommand = new RelayCommand<ICloseable>((view) =>
         { 
             SessionController.Instance(Username, Password);
             if (SessionController.LoggedIn != null) CloseCommand.Execute(view);

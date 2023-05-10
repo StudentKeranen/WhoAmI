@@ -25,14 +25,14 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="1" Grid.Row="0" Margin="45,25,45,0" Height="100" Width="100" Source="/image/user.png"/>
+        <Image Grid.Column="1" Grid.Row="0" Margin="0,25,0,0" Height="100" Width="100" Source="./image/user.png"/>
         <WrapPanel Grid.Column="1" Grid.Row="1" Margin="0,0,0,62" Grid.RowSpan="2">
             <Label Content="Username" Width="110" Height="44" FontSize="18" FontFamily="Sans Serif Collection"/>
-            <Image Source="/image/userprofile.png" RenderTransformOrigin="0.096,0.611" Height="74" Width="74" />
+            <Image Source="./image/userprofile.png" RenderTransformOrigin="0.096,0.611" Height="74" Width="74" />
         </WrapPanel>
         <WrapPanel Grid.Column="1" Grid.Row="3">
             <Label Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Height="50" FontSize="18" RenderTransformOrigin="0.5,0.5" FontFamily="Sans Serif Collection"/>
-            <Image Source="/image/password123.png" Height="19" RenderTransformOrigin="0.763,0.351" Width="19" Margin="50,0,0,0"/>
+            <Image Source="./image/password123.png" Height="19" RenderTransformOrigin="0.763,0.351" Width="19" Margin="50,0,0,0"/>
         </WrapPanel>
 
         <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Width="190" Height="20"/>

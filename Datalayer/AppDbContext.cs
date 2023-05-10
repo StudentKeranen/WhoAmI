@@ -26,6 +26,8 @@ namespace Datalayer
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasKey(u => u.UserId);
+
+            //Many to Many förhållande mellan PersonalData och Company!
         }
         public void seed()
         {

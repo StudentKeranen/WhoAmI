@@ -8,7 +8,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\image\password123.png" />
+    <None Remove="Views\image\user.png" />
+    <None Remove="Views\image\userprofile.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Businesslayer\Businesslayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\image\password123.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\image\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\image\userprofile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="image\password123.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="image\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="image\userprofile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

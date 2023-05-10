@@ -33,7 +33,6 @@ namespace Presentationlayer.WPF.ViewModels
         { 
             SessionController.Instance(Username, Password);
             if (SessionController.LoggedIn != null) CloseCommand.Execute(view);
-            else App.Current.Shutdown();
         });
 
         private ICommand closeCommand = null!;

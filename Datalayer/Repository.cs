@@ -25,8 +25,7 @@ namespace Datalayer
         public void Add(T entity)
         {
             dbSet.Add(entity);
-
-
+            context.SaveChanges();
         }
         /// <summary>
         ///  Find a set of entities that match a predicate.

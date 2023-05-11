@@ -39,7 +39,7 @@
         </WrapPanel>
         <components:BindablePasswordBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="20" Width="190" Background="White" Margin="0,61,0,0" Grid.RowSpan="3" Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
-        <Button Grid.Column="1" Grid.Row="4" Content="Sign In" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="130" Margin="0,62,0,0" Grid.RowSpan="2" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=View}"/>
+        <Button Grid.Column="1" Grid.Row="4" Content="Sign In" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="130" Margin="0,62,0,0" Grid.RowSpan="2" Command="{Binding LogInCommand}" CommandParameter="{Binding ElementName=View}"/>
 
     </Grid>
 </Window>

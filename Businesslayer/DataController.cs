@@ -39,9 +39,9 @@ namespace Businesslayer
                         company = new Company() { CompanyName = xmlReader.Name };
                         unitOfWork.CompanyRepository.Add(company);
                     }
+                    string[] strings = new string[2];
                     while (xmlReader.Read())
                     {
-                        string[] strings = new string[2];
                         switch (xmlReader.NodeType)
                         {
                             case XmlNodeType.Element:
@@ -50,9 +50,12 @@ namespace Businesslayer
                             case XmlNodeType.Text:
                                 strings[1] = xmlReader.Value;
                                 break;
+                            case XmlNodeType.EndElement:
+                                list.Add(strings);
+                                strings = new string[2];
+                                break;
                             default: break;
                         }
-                        list.Add(strings);
                     }
                 }
             }
@@ -62,7 +65,7 @@ namespace Businesslayer
         public List<string[]> FetchPersonalData()
         {
             List<string[]> list = new List<string[]>();
-            foreach (PersonalData personalData in unitOfWork.PersonalDataRepository.Find(pd => true))
+            foreach (PersonalData personalData in unitOfWork.PersonalDataRepository.Find(pd => pd.User == SessionController.LoggedIn))
             {
                 string[] strings = new string[2];
                 strings[0] = personalData.DataName; 

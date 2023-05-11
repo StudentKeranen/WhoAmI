@@ -5,24 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Presentationlayer.WPF.Views"
         mc:Ignorable="d"
-        Title="WhoAmI" Height="450" Width="800" Visibility="{Binding MainVisibility}">
-    <!--<Window.DataContext>
-        <vm:MainViewModel/>
-    </Window.DataContext>-->
+        Title="WhoAmI" Height="450" Width="800" Visibility="{Binding MainVisibility}" FontFamily="Segoe Fluent Icons">
 
     <DockPanel LastChildFill="True">
         <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Views/image/Bakgrund.jpg"></ImageBrush>
+            </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Button x:Name="Submit" Grid.Column="2" Content="Submit" Foreground="Black" HorizontalAlignment="Left"  Grid.Row="3" VerticalAlignment="Top" Height="30" Width="85" FontFamily="Segoe UI" BorderThickness="1,1,1,1" FontWeight="Bold" Background="White" RenderTransformOrigin="-0.98,1.001" Margin="157,157,0,0"/>
+            <Label Grid.Column="1" x:Name="infoInloggad" Content="{Binding LoggedInUser}" Margin="0,0,15,0" HorizontalAlignment="Right"/>
+            
+            <DataGrid Margin="0,0,133,0" Grid.RowSpan="2" FontFamily="Agency FB" Grid.Row="1" Grid.ColumnSpan="2" Background="#FFF8F8F8" FontSize="18">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Personal information" Binding="{Binding }" />
+                    <DataGridTextColumn Width="*" Header="Cipers data" Binding="{Binding }">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Company data" Binding="{Binding }">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+            <Button Name="load" Content="Load" Grid.Column="2" Grid.Row="1" Margin="200,44,24,127" FontFamily="Arial Rounded MT Bold" Foreground="Black" Background="White" Opacity="0.5" BorderBrush="White" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="20">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+
         </Grid>
+
+
     </DockPanel>
-   
+
 </Window>

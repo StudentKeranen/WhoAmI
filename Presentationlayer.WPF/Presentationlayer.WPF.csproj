@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\image\Bakgrund.jpg" />
     <None Remove="Views\image\password123.png" />
     <None Remove="Views\image\user.png" />
     <None Remove="Views\image\userprofile.png" />
@@ -18,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Views\image\Bakgrund.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Views\image\password123.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

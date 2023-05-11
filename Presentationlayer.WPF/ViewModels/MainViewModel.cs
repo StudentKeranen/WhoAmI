@@ -15,6 +15,7 @@ namespace Presentationlayer.WPF.ViewModels
     public class MainViewModel : ObservableObject
     {
         WindowService windowService = new WindowService();
+        DataController dataController = new DataController()
         private string loggedInUser = "#NA";
         public string LoggedInUser
         {   
@@ -46,6 +47,15 @@ namespace Presentationlayer.WPF.ViewModels
             get { return mainVisibility; } 
             set { mainVisibility = value; OnPropertyChanged(); } 
         }
+
+        private ICommand fetchDataCommand = null!;
+        public ICommand FetchDataCommand =>
+            fetchDataCommand ??= fetchDataCommand = new RelayCommand(() =>
+            {
+                MainVisibility = Visibility.Hidden;
+                SessionController.Terminate();
+                LogIn();
+            });
 
         private ICommand logOut = null!;
         public ICommand LogOut =>

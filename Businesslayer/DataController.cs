@@ -15,7 +15,7 @@ using Datalayer;
 
 namespace Businesslayer
 {
-    internal class DataController
+    public class DataController
     {
         public List<String[]> CheckForFile(out Company company)
         {

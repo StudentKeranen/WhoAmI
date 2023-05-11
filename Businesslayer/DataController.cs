@@ -15,11 +15,12 @@ using Datalayer;
 
 namespace Businesslayer
 {
-    internal class DataController
+    public class DataController
     {
+        UnitOfWork unitOfWork = new UnitOfWork();
+
         public List<String[]> CheckForFile(out Company company)
         {
-            UnitOfWork unitOfWork = new UnitOfWork();
             company = null!;
             List<String[]> list = new List<String[]>();
             string path = AppContext.BaseDirectory;
@@ -54,6 +55,19 @@ namespace Businesslayer
                         list.Add(strings);
                     }
                 }
+            }
+            return list;
+        }
+
+        public List<string[]> FetchPersonalData()
+        {
+            List<string[]> list = new List<string[]>();
+            foreach (PersonalData personalData in unitOfWork.PersonalDataRepository.Find(pd => true))
+            {
+                string[] strings = new string[2];
+                strings[0] = personalData.DataName; 
+                strings[1] = personalData.DataValue;
+                list.Add(strings);
             }
             return list;
         }

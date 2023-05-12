@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Presentationlayer.WPF.ViewModels
@@ -30,8 +31,17 @@ namespace Presentationlayer.WPF.ViewModels
         private ICommand logInCommand = null!;
         public ICommand LogInCommand =>
         logInCommand ??= logInCommand = new RelayCommand<ICloseable>((view) =>
-        { 
-            SessionController.Instance(Username, Password);
+        {
+            try
+            {
+                SessionController.Instance(Username, Password);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Username = string.Empty;
+                Password = string.Empty;
+            }
             if (SessionController.LoggedIn != null) CloseCommand.Execute(view);
         });
 

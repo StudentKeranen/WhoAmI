@@ -106,6 +106,7 @@ namespace Presentationlayer.WPF.ViewModels
             {
                 MainVisibility = Visibility.Hidden;
                 SessionController.Terminate();
+                PersonalDataSet = null!;
                 LogIn();
             });
 

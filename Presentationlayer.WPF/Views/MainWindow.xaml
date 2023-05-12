@@ -10,74 +10,30 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
-
     <DockPanel LastChildFill="True">
-        <Grid>
-            <Grid.Background>
-                <ImageBrush ImageSource="/Views/image/Bakgrund.jpg"></ImageBrush>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="Submit" Grid.Column="2" Content="Submit" Foreground="Black" HorizontalAlignment="Left"  Grid.Row="2"  Height="30" Width="91" FontFamily="Agency FB" BorderThickness="1,1,1,1" Background="#FFC0BFBF" RenderTransformOrigin="-0.98,1.001" Margin="152,142,0,40" FontSize="16" FontWeight="Bold"/>
-            <Label Grid.Column="1" x:Name="infoInloggad" Content="{Binding LoggedInUser}" Margin="0,0,15,0" HorizontalAlignment="Right" Background="DarkGray" FontFamily="Agency FB"/>
-
-   <DataGrid ItemsSource="{Binding PersonalDataSet}" Margin="0,0,150,0" Grid.RowSpan="3" FontFamily="Agency FB" Grid.ColumnSpan="3" FontSize="18" BorderBrush="#FF0081FF" Background="White" Opacity="0.5" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Header="Personal information" Binding="{Binding PersonalInformation}">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                <Setter Property="Foreground" Value="white" />
-                                <Setter Property="Background" Value="#FF194093"/>
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Cipers data" Binding="{Binding CipersData}">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                <Setter Property="Foreground" Value="white" />
-                                <Setter Property="Background" Value="#FF293B95"/>
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-
-                    <DataGridTextColumn Width="*" Header="Company data" Binding="{Binding CompanyData}">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                <Setter Property="Foreground" Value="white" />
-                                <Setter Property="Background" Value="#FF293B95"/>
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+        <DockPanel.Background>
+            <ImageBrush ImageSource="/Views/image/Bakgrund.jpg"></ImageBrush>
+        </DockPanel.Background>
+        
+        
+        <StackPanel DockPanel.Dock="Right">
+            <Label DockPanel.Dock="Top" x:Name="infoInloggad" Content="{Binding LoggedInUser}" Margin="0,0,15,0" HorizontalAlignment="Right" Background="DarkGray" FontFamily="Agency FB"/>
             
-            
-   <Button Name="load" Content="Load file" Grid.Column="2" Grid.Row="1" Margin="167,49,38,106" FontFamily="Agency FB" Foreground="Black" Background="#FFB8B8B8"  BorderBrush="White" FontWeight="Bold" FontSize="14" Command="{Binding FetchDataCommand}">
+            <Button Name="load" Content="Load file" Margin="50,50,50,200" Height="90"  FontFamily="Agency FB" Foreground="Black" Background="#FFB8B8B8"  BorderBrush="White" FontWeight="Bold" FontSize="14" Command="{Binding FetchDataCommand}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="30">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="50">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Button Content="Log Out" Foreground="Black"  Height="30" Width="91" FontFamily="Agency FB" BorderThickness="1,1,1,1" Background="#FFC0BFBF" Margin="50,0,50,0" FontSize="16" FontWeight="Bold" Command="{Binding LogOut}"/>
+        </StackPanel>
 
+        <Label DockPanel.Dock="Bottom" x:Name="infoCompany" Content="{Binding CompanyInfo.CompanyName}" Margin="15,0,0,0" HorizontalAlignment="Left" Background="DarkGray" FontFamily="Agency FB"/>
 
-
-
-        </Grid>
-
+        <DataGrid ItemsSource="{Binding PersonalDataSet}" Margin="0,0,0,0" FontFamily="Agency FB" FontSize="18" BorderBrush="#FF0081FF" Background="White" Opacity="0.5" />
 
     </DockPanel>
 

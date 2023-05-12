@@ -30,7 +30,7 @@
             <Label Content="Username" Width="110" Height="44" FontSize="18" FontFamily="Sans Serif Collection"/>
             <Image Source=".\image\userprofile.png" RenderTransformOrigin="0.096,0.611" Height="74" Width="74" />
         </WrapPanel>
-        <TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Width="190" Height="20"/>
+        <TextBox x:Name="UserInput" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="{Binding Username}" VerticalAlignment="Top" Width="190" Height="20"/>
 
 
         <WrapPanel Grid.Column="1" Grid.Row="3">

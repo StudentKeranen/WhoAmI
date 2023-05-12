@@ -41,12 +41,12 @@ namespace Datalayer
                 Users.Add(user);
                 PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "FirstName", DataValue = "Jonathan", User = user });
                 PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "LastName", DataValue = "Öberg", User = user });
-                PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Address", DataValue = "Östandvind 9", User = user });
-                PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "City", DataValue = "Borås", User = user });
+                PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Address", DataValue = "Vistvägen 15", User = user });
+                PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "City", DataValue = "Ulricehamn", User = user });
                 PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "PostalCode", DataValue = "523 30", User = user });
                 PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Personal identity number", DataValue = "19550505-8951", User = user });
                 PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "E-mail", DataValue = "Jonathan.Öberg@gmail.com", User = user });
-                PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Phone", DataValue = "073-8352467", User = user });
+                PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "Phone", DataValue = "0708941399", User = user });
                 user = new User("SaSforLajf", 1);
                 Users.Add(user);
                 PersonalDataSet.Add(new PersonalData() { DataCategories = category, DataName = "First name", DataValue = "Robert", User = user });

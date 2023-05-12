@@ -1,16 +1,9 @@
 ﻿using Entitylayer;
-using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Shapes;
 using System.Xml.Linq;
 using System.Xml;
-using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using Datalayer;
 
 namespace Businesslayer

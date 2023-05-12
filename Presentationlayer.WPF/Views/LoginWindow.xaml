@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Presentationlayer.WPF.ViewModels"
-        xmlns:local="clr-namespace:Presentationlayer.WPF.Views" 
         xmlns:components="clr-namespace:Presentationlayer.WPF.Components"
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="500" x:Name="View">

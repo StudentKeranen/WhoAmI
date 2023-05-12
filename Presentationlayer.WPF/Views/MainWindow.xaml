@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Presentationlayer.WPF.ViewModels"
-        xmlns:local="clr-namespace:Presentationlayer.WPF.Views"
         mc:Ignorable="d"
         Title="WhoAmI" Height="450" Width="800" Visibility="{Binding MainVisibility}" FontFamily="Segoe Fluent Icons">
+
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
@@ -31,10 +31,11 @@
             <Button Content="Log Out" Foreground="Black"  Height="30" Width="91" FontFamily="Agency FB" BorderThickness="1,1,1,1" Background="#FFC0BFBF" Margin="50,0,50,0" FontSize="16" FontWeight="Bold" Command="{Binding LogOut}"/>
         </StackPanel>
 
-        <Label DockPanel.Dock="Bottom" x:Name="infoCompany" Content="{Binding CompanyInfo.CompanyName}" Margin="15,0,0,0" HorizontalAlignment="Left" Background="DarkGray" FontFamily="Agency FB"/>
+        <Grid>
+        <Label HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="infoCompany" Content="{Binding CompanyInfo.CompanyName}" Margin="15,0,0,0" Background="DarkGray" FontFamily="Agency FB"/>
 
         <DataGrid ItemsSource="{Binding PersonalDataSet}" Margin="0,0,0,0" FontFamily="Agency FB" FontSize="18" BorderBrush="#FF0081FF" Background="White" Opacity="0.5" />
-
+        </Grid>
     </DockPanel>
 
 </Window>

@@ -7,35 +7,35 @@
         mc:Ignorable="d"
         Title="WhoAmI" Height="450" Width="800" Visibility="{Binding MainVisibility}" FontFamily="Agency FB">
 
-    <Window.DataContext>
-        <vm:MainViewModel/>
-    </Window.DataContext>
-    <DockPanel LastChildFill="True">
-        <DockPanel.Background>
-            <ImageBrush ImageSource="/Views/image/Bakgrund.jpg"></ImageBrush>
-        </DockPanel.Background>
-        
-        
-        <StackPanel DockPanel.Dock="Right">
-            <Label DockPanel.Dock="Top" x:Name="infoInloggad" Content="{Binding LoggedInUser}" Margin="0,0,15,0" HorizontalAlignment="Right" Background="DarkGray" FontFamily="Agency FB"/>
-            
-            <Button Name="load" Content="Load file" Margin="50,50,50,200" Height="90"  FontFamily="Agency FB" Foreground="Black" Background="#FFB8B8B8"  BorderBrush="White" FontWeight="Bold" FontSize="14" Command="{Binding FetchDataCommand}">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="50">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Content="Log Out" Foreground="Black"  Height="30" Width="91" FontFamily="Agency FB" BorderThickness="1,1,1,1" Background="#FFC0BFBF" Margin="50,0,50,0" FontSize="16" FontWeight="Bold" Command="{Binding LogOut}"/>
-        </StackPanel>
+        <Window.DataContext>
+            <vm:MainViewModel/>
+        </Window.DataContext>
 
-        <Grid>
-        <Label HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="infoCompany" Content="{Binding CompanyInfo.CompanyName}" Margin="15,0,0,0" Background="DarkGray" FontFamily="Agency FB"/>
+        <DockPanel LastChildFill="True">
+            <DockPanel.Background>
+                <ImageBrush ImageSource="/Views/image/Bakgrund.jpg"></ImageBrush>
+            </DockPanel.Background>
 
-        <DataGrid ItemsSource="{Binding PersonalDataSet}" Margin="0,0,0,0" FontFamily="Agency FB" FontSize="18" BorderBrush="#FF0081FF" Background="White" Opacity="0.5" />
-        </Grid>
-    </DockPanel>
+            <StackPanel DockPanel.Dock="Right">
+                <Label DockPanel.Dock="Top" x:Name="infoInloggad" Content="{Binding LoggedInUser}" Margin="0,0,15,0" HorizontalAlignment="Right" Background="DarkGray" FontFamily="Agency FB"/>
+
+                <Button Name="load" Content="Load file" Margin="50,50,50,200" Height="90"  FontFamily="Agency FB" Foreground="Black" Background="#FFB8B8B8"  BorderBrush="White" FontWeight="Bold" FontSize="14" Command="{Binding FetchDataCommand}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="50">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Log Out" Foreground="Black"  Height="30" Width="91" FontFamily="Agency FB" BorderThickness="1,1,1,1" Background="#FFC0BFBF" Margin="50,0,50,0" FontSize="16" FontWeight="Bold" Command="{Binding LogOut}"/>
+            </StackPanel>
+
+            <Grid>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="infoCompany" Content="{Binding CompanyInfo.CompanyName}" Margin="15,0,0,0" Background="DarkGray" FontFamily="Agency FB"/>
+
+                <DataGrid ItemsSource="{Binding PersonalDataSet}" Margin="0,0,0,0" FontFamily="Agency FB" FontSize="18" BorderBrush="#FF0081FF" Background="White" Opacity="0.5" />
+            </Grid>
+        </DockPanel>
 
 </Window>

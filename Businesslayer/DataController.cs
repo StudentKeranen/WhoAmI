@@ -65,7 +65,7 @@ namespace Businesslayer
         public List<string[]> FetchPersonalData()
         {
             List<string[]> list = new List<string[]>();
-            foreach (PersonalData personalData in unitOfWork.PersonalDataRepository.Find(pd => pd.User == SessionController.LoggedIn))
+            foreach (PersonalData personalData in unitOfWork.PersonalDataRepository.Find(pd => pd.User.UserId == SessionController.LoggedIn.UserId,pd => pd.User))
             {
                 string[] strings = new string[2];
                 strings[0] = personalData.DataName; 

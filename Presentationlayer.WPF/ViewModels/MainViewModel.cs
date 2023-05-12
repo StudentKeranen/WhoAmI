@@ -11,6 +11,7 @@ using System.Windows.Threading;
 using Businesslayer;
 using Entitylayer;
 using System.Linq;
+using System.Collections;
 
 namespace Presentationlayer.WPF.ViewModels
 {
@@ -59,8 +60,8 @@ namespace Presentationlayer.WPF.ViewModels
             set { companyInfo = value; OnPropertyChanged(); }
         }
 
-        private List<string[]> personalDataSet;
-        public List<string[]> PersonalDataSet
+        private IEnumerable personalDataSet;
+        public IEnumerable PersonalDataSet
         {
             get { return personalDataSet; }
             set { personalDataSet = value; OnPropertyChanged(); }
@@ -76,7 +77,27 @@ namespace Presentationlayer.WPF.ViewModels
 
                 List<string[]> cipersData = dataController.FetchPersonalData();
 
-                PersonalDataSet = cipersData.Concat(companyData).ToList();
+                var query =
+                    (from data1 in cipersData
+                     join data2 in companyData on data1[0] equals data2[0] into Data
+                     from data3 in Data.DefaultIfEmpty()
+                     select new
+                     {
+                         PersonalInformation = data1[0],
+                         CipersData = data1[1],
+                         CompanyData = data3?[1] ?? string.Empty
+                     })
+                    .Union(from data1 in companyData
+                           join data2 in cipersData on data1[0] equals data2[0] into Data
+                           from data3 in Data.DefaultIfEmpty()
+                           select new
+                           {
+                               PersonalInformation = data1[0],
+                               CipersData = data3?[1] ?? string.Empty,
+                               CompanyData = data1[1]
+                           });
+
+                PersonalDataSet = query;
             });
 
         private ICommand logOut = null!;
